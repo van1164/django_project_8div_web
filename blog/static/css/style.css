@@ -1,0 +1,202 @@
+body{
+	background-color: whitesmoke;
+	font-family : '고딕';
+}
+
+#header{
+	margin : 0px 0px;
+	width : 1700px;
+	height : 100px;
+	background-color: rgb(108, 108, 112);
+
+	text-align: center;
+	font-size : 70px;
+	color : white;
+}
+
+#sidebar{
+	margin : 0px 0px;
+	width : 250px;
+	height : 810px;
+	background-color: rgb(46, 45, 45);
+}
+
+#content{
+	margin : 0px 0px;
+	background-color: rgb(255, 255, 255);
+}
+
+.StateBlock
+{
+	width : 270px;
+	height : 150px;
+	
+	display : inline-block;
+	position : absolute;
+}
+
+#NormalBlock
+{
+	top : 150px;
+	left : 300px;
+	background-color : rgb(58, 255, 58);
+}
+
+#MidNormalBlock
+{
+	top : 150px;
+	left : 700px;
+	background-color : rgb(255, 196, 34);
+}
+
+#UnNormalBlock
+{
+	top : 150px;
+	left : 1100px;
+	background-color : rgb(255, 0, 0);
+}
+
+.BlockName
+{
+	text-align: left;
+	font-size : 40px;
+	color : whitesmoke;
+	font-weight: bold;
+}
+
+.BlockImg
+{
+	width : 70px;
+	height : 70px;
+	margin : 10px 0px 0px 10px;
+}
+
+.StateNum
+{
+	margin-top: 60px;
+	margin-right: 20px;
+	float : right;
+	color : whitesmoke;
+	font-size : 65px;
+}
+
+#NodeContents
+{
+	display : inline-block;
+	position : absolute;
+
+	top : 350px;
+	left : 300px;
+
+	width : 1070px;
+	height : 560px;
+
+	background-color: ivory;
+	border : 1px solid;
+
+}
+
+
+.NodeTaskButton
+{
+	position : absolute;
+	width : 100px;
+	height : 40px;
+}
+
+#NodeMake
+{
+	top : 350px;
+	left : 1370px;
+}
+
+#NodeAttribute
+{
+	top : 390px;
+	left : 1370px;
+}
+
+.Nodes
+{
+	margin : 5px 35px;
+	width : 250px;
+	height : 250px;
+	border : 1px solid;
+	border-radius: 40px;
+	background-color: rgb(255, 255, 255);
+
+	display : inline-block;
+
+	text-align : center;
+	font-size: 30px;
+}
+
+.NodeNames
+{
+	margin : 0px;
+	display : block;
+	height : 50px;
+	width : 250px;
+	border : 1px solid;
+	border-radius: 40px 40px 0px 0px;
+}
+
+.NodeDatas
+{
+	margin : 0px;
+	display : block;
+	height : 198px;
+	width : 250px;
+	border : 1px solid;
+	border-radius: 0px 0px 40px 40px;
+}
+
+.NodeDatas ul
+{
+	padding : 0px;
+}
+
+.Sensors
+{
+	padding : 0px;
+	margin : 0px;
+	list-style-type :none;
+	width : 70px;
+	height : 70px;
+	display: inline-block;
+	border : 1px dashed;
+	border-radius : 20px;
+	font-size : 15px;
+}
+
+a :hover
+{
+	color: rgb(0, 45, 248)
+}
+a
+{
+	color: rgb(0, 45, 248)
+}
+
+#timeset{
+	width: 100%;
+	height: 100%;
+	margin-right: 40%;
+	position: absolute;
+
+}
+.form-row{
+	padding-right: 0.5em;
+    line-height: 2em;
+    font-size: 1em;
+    clear: both;
+	color: #333;
+	width: 100%;
+}
+#block{
+	width: 50px;
+}
+#side{
+	color: lightgray;
+	text-decoration-line: none;
+}

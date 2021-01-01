@@ -1,0 +1,331 @@
+{%load static%}
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title> ---통합관제시스템--- </title>
+	<link rel="stylesheet" href="{% static 'css\style.css'%}">
+	<link rel="stylesheet" href="{% static 'css/BlockStyle.css'%}">
+	<link rel="stylesheet" href="{% static 'css/NodeStyle.css'%}">
+	<link rel="stylesheet" href="{% static 'css/TotalStyle.css'%}">
+	<link rel="stylesheet" href="{%static 'css/ButtonStyle.css'%}">
+	<script type="text/javascript" src="{% static 'js/main.js'%}"> </script>
+
+	<style>
+
+		a:hover{
+			color: black;
+
+		}
+
+	</style>
+
+
+
+	<script>window.setTimeout(function(){location.href = "http://192.168.1.101:8080/center"},2000);</script>
+	
+
+	{% if real == 1 %}
+	<script> window.open(href = "popup", '_blank', 'width=1000, height=450,toolbars = no, scrollbars = yes'); </script>
+	{% endif %}
+
+
+
+</head>
+
+<body onload = "">
+
+	<div id = "header">
+		통합관제시스템
+	</div>
+	<div id = "sidebar">
+		<button class="placesBtn"> <a href="restart" onclick="window.open(this.href,'_self', 'width=1000, height=450,toolbars = no, scrollbars = yes'); return false;" id="side">종합화면</a> </button>
+		<button class="placesBtn"> <a href="center" onclick="window.open(this.href,'_self', 'width=1000, height=450,toolbars = no, scrollbars = yes'); return false;" id="side">통신센터</a> </button>
+		<button class="placesBtn"> <a href="restart" onclick="window.open(this.href,'_self', 'width=1000, height=450,toolbars = no, scrollbars = yes'); return false;" id="side">66쉘터차량</a> </button>
+		<button class="placesBtn"> 군사경찰대 </button>
+		<button class="placesBtn"> 방공대대 </button>
+		<button class="placesBtn"> 정보대대 </button>
+		<button class="placesBtn"> 의무근무대 </button>
+		<button class="placesBtn"> 기갑여단 </button>
+		<button class="placesBtn"> 포병여단 </button>
+	</div>
+	<div id = "content">
+
+		<div class = "StateBlock" id = "NormalBlock">
+		<img class="BlockImg" src="{% static 'Img/Smile.png'%}">
+			<span class = "BlockName">
+				정상
+			</span>
+			<span class = "StateNum"><a href="green" onclick="window.open(this.href,'_blank', 'width=1000, height=450,toolbars = no, scrollbars = yes'); return false;">{{all.green}}</a></span>
+		</div>
+
+		<div class = "StateBlock" id = "MidNormalBlock">
+		<img class="BlockImg" src="{% static 'Img/Warnning.png'%}">
+			<span class = "BlockName">
+				주의
+			</span>
+			<span class = "StateNum"><a href="yellow" onclick="window.open(this.href,'_blank', 'width=1000, height=450,toolbars = no, scrollbars = yes'); return false;">{{all.yellow}}</a></span>		</div>
+
+		<div class = "StateBlock" id = "UnNormalBlock">
+		<img class="BlockImg" src="{% static 'Img/error.png'%}">
+			<span class = "BlockName">
+				비정상
+			</span>
+			<span class = "StateNum"><a href="red" onclick="window.open(this.href,'_blank', 'width=1000, height=450,toolbars = no, scrollbars = yes'); return false;">{{all.red}}</a></span>		</div>
+
+		<button id="NodeMake" class = "NodeTaskButton">
+			노드 생성</button>
+		<button id="NodeAttribute" class = "NodeTaskButton">
+			노드 속성</button>
+		<button id="NodeAttribute" class = "NodeTaskButton">
+			<a href="timeset" onclick="window.open(this.href,'_blank', 'width=500, height=250,toolbars = no, scrollbars = yes'); return false;" style="color: black; text-decoration-line: none;">시간 설정</a></button>
+
+
+		<div id = "NodeContents">
+			<div>정보통신센터</div>
+					<ul>
+						<li class = "Sensors" id="TempS" > 
+							<div class = "SensorNames" >
+								온도
+							</div>
+							<div class = "SensorValues" style="{{all.ondo_color}}">
+								{{all.ondo}}ºC
+							</div>
+						</li>
+						<li class = "Sensors" id="DoorS" > 
+							<div class = "SensorNames">
+								문열림
+							</div>
+							<div class = "SensorValues" style="{{all.Door_color}}">
+								{{all.Door}}
+							</div>
+						</li>
+						<li class = "Sensors" id="PassS" >
+							<div class = "SensorNames">
+								암호모듈
+							</div>
+							<div class = "SensorValues" style="{{all.password_color}}">
+								{{all.password}}
+							</div>
+						</li>
+						<li class = "Sensors" id="FireS" >
+							<div class = "SensorNames">
+								화재
+							</div>
+							<div class = "SensorValues" style="{{all.Fire_color}}">
+								{{all.Fire}}
+							</div>
+						</li>
+						<li class = "Sensors" id="StrangeS">
+							<div class = "SensorNames">
+								거수자
+							</div>
+							<div class = "SensorValues"  style="{{all.invade_color}}">
+								{{all.invade}}
+							</div>
+						</li>
+					</ul>
+			<!-- <li class = "Nodes" id = "Node3">
+				<div class = "NodeNames"> 체계운용과 </div>
+				<div class = "NodeDatas">
+					<ul>
+						<ul>
+						<li class = "Sensors" id="TempS"> 
+							<div class = "SensorNames">
+								온도
+							</div>
+							<div class = "SensorValues">
+								21도
+							</div>
+						</li>
+						<li class = "Sensors" id="DoorS"> 
+							<div class = "SensorNames">
+								문열림
+							</div>
+							<div class = "SensorValues">
+								닫힘
+							</div>
+						</li>
+						<li class = "Sensors" id="PassS">
+							<div class = "SensorNames">
+								암호모듈
+							</div>
+							<div class = "SensorValues">
+								정상
+							</div>
+						</li>
+						<li class = "Sensors" id="FireS">
+							<div class = "SensorNames">
+								화재
+							</div>
+							<div class = "SensorValues">
+								정상
+							</div>
+						</li>
+						<li class = "Sensors" id="StrangeS">
+							<div class = "SensorNames">
+								거수자
+							</div>
+							<div class = "SensorValues">
+								없음
+							</div>
+						</li>
+					</ul>
+					</ul>
+				</div>
+			</li>
+			<li class = "Nodes" id = "Node4">
+				<div class = "NodeNames"> 군수과 </div>
+				<div class = "NodeDatas">
+					<ul>
+						<ul>
+						<li class = "Sensors" id="TempS"> 
+							<div class = "SensorNames">
+								온도
+							</div>
+							<div class = "SensorValues">
+								21도
+							</div>
+						</li>
+						<li class = "Sensors" id="DoorS"> 
+							<div class = "SensorNames">
+								문열림
+							</div>
+							<div class = "SensorValues">
+								닫힘
+							</div>
+						</li>
+						<li class = "Sensors" id="PassS">
+							<div class = "SensorNames">
+								암호모듈
+							</div>
+							<div class = "SensorValues">
+								정상
+							</div>
+						</li>
+						<li class = "Sensors" id="FireS">
+							<div class = "SensorNames">
+								화재
+							</div>
+							<div class = "SensorValues">
+								정상
+							</div>
+						</li>
+						<li class = "Sensors" id="StrangeS">
+							<div class = "SensorNames">
+								거수자
+							</div>
+							<div class = "SensorValues">
+								없음
+							</div>
+						</li>
+					</ul>
+					</ul>
+				</div>
+			</li>
+			<li class = "Nodes" id = "Node5">
+				<div class = "NodeNames"> 인사과 </div>
+				<div class = "NodeDatas">
+					<ul>
+						<ul>
+						<li class = "Sensors" id="TempS"> 
+							<div class = "SensorNames">
+								온도
+							</div>
+							<div class = "SensorValues">
+								21도
+							</div>
+						</li>
+						<li class = "Sensors" id="DoorS"> 
+							<div class = "SensorNames">
+								문열림
+							</div>
+							<div class = "SensorValues">
+								닫힘
+							</div>
+						</li>
+						<li class = "Sensors" id="PassS">
+							<div class = "SensorNames">
+								암호모듈
+							</div>
+							<div class = "SensorValues">
+								정상
+							</div>
+						</li>
+						<li class = "Sensors" id="FireS">
+							<div class = "SensorNames">
+								화재
+							</div>
+							<div class = "SensorValues">
+								정상
+							</div>
+						</li>
+						<li class = "Sensors" id="StrangeS">
+							<div class = "SensorNames">
+								거수자
+							</div>
+							<div class = "SensorValues">
+								없음
+							</div>
+						</li>
+					</ul>
+					</ul>
+				</div>
+			</li>
+			<li class = "Nodes" id = "Node6">
+				<div class = "NodeNames"> 정보통신센터 </div>
+				<div class = "NodeDatas">
+					<ul>
+						<ul>
+						<li class = "Sensors" id="TempS"> 
+							<div class = "SensorNames">
+								온도
+							</div>
+							<div class = "SensorValues">
+								21도
+							</div>
+						</li>
+						<li class = "Sensors" id="DoorS"> 
+							<div class = "SensorNames">
+								문열림
+							</div>
+							<div class = "SensorValues">
+								닫힘
+							</div>
+						</li>
+						<li class = "Sensors" id="PassS">
+							<div class = "SensorNames">
+								암호모듈
+							</div>
+							<div class = "SensorValues">
+								정상
+							</div>
+						</li>
+						<li class = "Sensors" id="FireS">
+							<div class = "SensorNames">
+								화재
+							</div>
+							<div class = "SensorValues">
+								정상
+							</div>
+						</li>
+						<li class = "Sensors" id="StrangeS">
+							<div class = "SensorNames">
+								거수자
+							</div>
+							<div class = "SensorValues">
+								없음
+							</div>
+						</li>
+					</ul>
+					</ul>
+				</div>
+			</li>-->
+			</ul>
+		</div>
+
+	</div> 
+</body>
+</html>

@@ -1,0 +1,53 @@
+.StateBlock
+{
+	width : 270px;
+	height : 150px;
+	
+	display : inline-block;
+	position : absolute;
+}
+
+#NormalBlock
+{
+	top : 150px;
+	left : 300px;
+	background-color : rgb(58, 255, 58);
+}
+
+#MidNormalBlock
+{
+	top : 150px;
+	left : 700px;
+	background-color : rgb(255, 196, 34);
+}
+
+#UnNormalBlock
+{
+	top : 150px;
+	left : 1100px;
+	background-color : rgb(255, 0, 0);
+}
+
+.BlockName
+{
+	text-align: left;
+	font-size : 40px;
+	color : whitesmoke;
+	font-weight: bold;
+}
+
+.BlockImg
+{
+	width : 70px;
+	height : 70px;
+	margin : 10px 0px 0px 10px;
+}
+
+.StateNum
+{
+	margin-top: 60px;
+	margin-right: 20px;
+	float : right;
+	color : whitesmoke;
+	font-size : 65px;
+}

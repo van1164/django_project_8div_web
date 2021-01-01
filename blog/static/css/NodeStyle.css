@@ -1,0 +1,106 @@
+#NodeContents
+{
+	display : inline-block;
+	position : absolute;
+
+	top : 350px;
+	left : 300px;
+
+	width : 1070px;
+	height : 560px;
+
+	background-color: ivory;
+	border : 1px solid;
+}
+
+.NodeTaskButton
+{
+	position : absolute;
+	width : 100px;
+	height : 40px;
+}
+
+#NodeMake
+{
+	top : 350px;
+	left : 1370px;
+}
+
+#NodeAttribute
+{
+	top : 390px;
+	left : 1370px;
+}
+
+.Nodes
+{
+	margin : 5px 35px;
+	width : 250px;
+	height : 250px;
+	
+	border-radius: 40px;
+	background-color: rgb(255, 255, 255);
+
+	display : inline-block;
+
+	text-align : center;
+	font-size: 30px;
+}
+
+.NodeNames
+{
+	margin : 0px;
+	display : block;
+	height : 50px;
+	width : 250px;
+	border : 1px solid;
+	border-radius: 40px 40px 0px 0px;
+}
+
+.NodeDatas
+{
+	margin : 0px;
+	display : block;
+	height : 198px;
+	width : 250px;
+	border : 1px solid;
+	border-radius: 0px 0px 40px 40px;
+}
+
+.NodeDatas ul
+{
+	padding : 0px;
+}
+
+.Sensors
+{
+	padding : 0px;
+	margin : 20px 2px 2px 0px;
+	list-style-type :none;
+	width : 70px;
+	height : 70px;
+	display: inline-block;
+	
+	border-radius : 20px;
+	font-size : 15px;
+}
+
+.SensorNames
+{
+	width : 70px;
+	height : 20px;
+	border : 0.5px solid;
+	border-radius : 20px 20px 0px 0px;
+	background-color: whitesmoke;
+}
+
+.SensorValues
+{
+	width : 70px;
+	height : 47px;
+	border : 0.5px solid;
+	border-radius : 0px 0px 20px 20px;
+	background-color: #3aff3a;
+	
+	font-size : 30px;
+}

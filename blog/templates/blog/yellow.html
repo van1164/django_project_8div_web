@@ -1,0 +1,35 @@
+{%load static%}
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title> ---통합관제시스템--- </title>
+	<link rel="stylesheet" href="{% static 'css\yellow_style.css'%}">
+	<script>window.setTimeout(function(){location.href = "http://192.168.1.101:8080/yellow"},3000);</script>
+
+</head>
+
+<body onload = "">
+
+	<div id="sidebar">
+		<div id="NormalBtn" class = "SideBtn">
+			<img class="BlockImg" src="{% static 'Img/Smile.png'%}">
+		</div>
+		<div id="WarningBtn" class = "SideBtn">
+			<img class="BlockImg" src="{% static 'Img/Warnning.png'%}">
+		</div>
+		<div id="DangerousBtn" class = "SideBtn">
+			<img class="BlockImg" src="{% static 'Img/error.png'%}">
+		</div>
+	</div>
+	<div id = "content">
+	{%for item in yellow%}
+	<div id="lst">{{item}}</div>
+	{% endfor %}		
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+{%load static%}
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title> ---통합관제시스템--- </title>
+	<link rel="stylesheet" href="{% static 'css\red_style.css'%}">
+
+
+
+</head>
+
+<body onload = "">
+
+
+
+	<div id="sidebar">
+		<div id="NormalBtn" class = "SideBtn">
+			<img class="BlockImg" src="{% static 'Img/Smile.png'%}">
+		</div>
+		<div id="WarningBtn" class = "SideBtn">
+			<img class="BlockImg" src="{% static 'Img/Warnning.png'%}">
+		</div>
+		<div id="DangerousBtn" class = "SideBtn">
+			<img class="BlockImg" src="{% static 'Img/error.png'%}">
+		</div>
+	</div>
+	<div id = "content">
+		{%for item in red%}
+		<div id="lst">{{item}}</div>
+		{% endfor %}
+	</div>
+
+
+
+	<audio controls loop autoplay style="width: 0px; height: 0px;">
+		<source src="{% static 'audio/SpeedLimitViolationAlert.mp3'%}" type="audio/mp3">
+
+
+	</audio>
+
+
+
+</body>
+</html>

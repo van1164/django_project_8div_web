@@ -1,0 +1,27 @@
+{%load static%}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script>window.setTimeout(function(){location.href = "http://192.168.1.101:8080/restart"},100);</script>
+
+
+    </head>
+    <body >
+    <body onload = "Popup();">
+        <audio controls loop style="width: 0px;">
+            <source src="{% static 'audio/Alarm.mp3'%}" type="audio/mp3">
+
+
+        </audio>
+
+    <script> function Popup(){
+        
+        
+		window.open(href = "popup", '_blank', 'width=1000, height=450,toolbars = no, scrollbars = no');} 
+	</script>
+
+
+    </body>
+
+</html>

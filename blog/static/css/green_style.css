@@ -1,0 +1,60 @@
+#sidebar
+{
+    display: inline-block;
+    float:left;
+}
+
+.SideBtn
+{
+    width : 100px;
+    height : 100px;
+    margin: 0px;
+    padding : 25px;
+    box-sizing:border-box;
+
+}
+
+.BlockImg
+{
+    width : 50px;
+    height : 50px;
+    cursor: pointer;
+}
+
+#NormalBtn
+{
+    background-color: rgb(58, 255, 58);
+}
+
+#WarningBtn
+{
+    background-color: rgb(255, 196, 34);
+}
+
+#DangerousBtn
+{
+    background-color: rgb(255, 0, 0);
+}
+
+#content
+{
+    box-sizing:border-box;
+    display: inline-block;
+    width : 60%;
+    height : 100%;
+    border: 10px solid  rgb(58, 255, 58);
+    background-color: rgb(58, 255, 58);
+
+    color : white;
+}
+
+#lst{
+	font-size: 35px;
+	
+	background-color:rgb(58, 255, 58);
+	color: whitesmoke;
+    
+    border-bottom: rgb(169, 169, 169) 1px solid;
+	
+
+}

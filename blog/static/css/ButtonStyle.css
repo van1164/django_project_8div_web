@@ -1,0 +1,29 @@
+#Button1
+{
+	top : 430px;
+	left : 1370px;
+}
+#Button2
+{
+	top : 470px;
+	left : 1370px;
+}
+#Button3
+{
+	top : 510px;
+	left : 1370px;
+}
+
+.placesBtn
+{
+	display : block;
+
+	width : 250px;
+	height : 70px;
+
+	background-color : gray;
+	color : lightgray;
+	border-color: gray;
+	font-size : 30px;
+	
+}
