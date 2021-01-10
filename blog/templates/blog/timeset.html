@@ -20,7 +20,7 @@
 
 <body onload = "">
 
-    <div style="width: 100%; font-size: 30px;">차량 감지 시간설정</div>
+    <div style="width: 100%; font-size: 30px;">센서 감지 시간설정</div>
     <span> 현재 설정된 시간 :</span>
     <span> 
     <div> 시작 : {{start1}}시  {{end1}}분 | 종료 : {{start2}}시  {{end2}}분</div>
@@ -30,7 +30,7 @@
 
     <form action="saved" method="post" id="timeset"><input type="hidden" name="csrfmiddlewaretoken" value="lYh6IULK41BHoFiK6GBdlQn3U5PAyRxq9FSEeAsuO3vWB1ai3AsICy9ArOUGtjSr">
         {% csrf_token %}
-        <div class="form-row" style="width: 450px;">
+        <div class="form-row" style="width: 480px;">
             <label class="required" for="id_username" style="background-color: whitesmoke;">시작 시간:</label> <input type="text" name="starttime1" value="" id="block">시 <input type="text" name="starttime2" value="" id="block">분
         </div>
         <div class="form-row" style="450px">

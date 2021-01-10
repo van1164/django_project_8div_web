@@ -15,6 +15,9 @@ urlpatterns = [
     path('timeset', views.timeset, name='timeset'),
     path('saved', views.saved, name='saved'),
     path('popup', views.popup, name='popup'),
-    path('popupMid', views.popupMid, name='popupMid'),
     path('center', views.center, name='center'),
+    path('center_2', views.center_2, name='center'),
+    path('center_3', views.center_3, name='center_2'),
+    path('center_4', views.center_4, name='center_3'),
+    path('mountain', views.mountain, name='mountain'),
 ]

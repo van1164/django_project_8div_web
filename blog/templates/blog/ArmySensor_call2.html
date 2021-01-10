@@ -42,12 +42,10 @@
 
 
 
-	{% comment %} <script>window.setTimeout(function(){location.href = "http://192.168.1.101:8080/restart"},2000);</script> {% endcomment %}
-	
+ <script>window.setTimeout(function(){location.href = "http://192.168.1.101:8080/center_2"},1000);</script>
 
 	{% if real == 1 %}
-	<script> window.open(href = "popup", '_blank', 'channelmode = yes, status = no, titlebar=no,menubar=no,location=no,width=1000, height=450,toolbars = no, scrollbars = yes'); </script>
-  	<script> window.open(href = "center_2", '_self', 'channelmode =yes')</script>
+	<script> window.open(href = "popup", '_blank', 'width=1000, height=450,toolbars = no, scrollbars = yes'); </script>
 	{% endif %}
 
 
@@ -68,6 +66,14 @@
           </button>
           <a class="navbar-brand" href="">8사단 통합관제시스템</a>
         </div>
+                <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="">Dashboard</a></li>
+            <li><a href="timeset"  onclick="window.open(this.href,'_blank', 'width=500, height=250,toolbars = no, scrollbars = yes'); return false;">시간 설정</a></li>
+            <li><a href="">노드 추가</a></li>
+            <li><a href="">기타</a></li>
+          </ul>
+          </div>
       </div>
     </nav>
 
@@ -75,10 +81,14 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li><a href="">전체보기</a></li>
-            <li class="active"><a href=>정보통신센터 <span class="sr-only"></a> </li>
-            <li><a href="">ATCIS 쉘터></a></li>
-            <li><a href="">TICN 쉘터</a></li>
+            <li><a href="detect">전체보기</a></li>
+            <li class="active"><a href="center_2">정보통신센터 <span class="sr-only"></a> </li>
+            <li><a href="mountain">불국산</a></li>
+            <li><a href="center_3">ATCIS 쉘터</a></li>
+            <li><a href="center_4">TICN 쉘터</a></li>
+            <li><a href="">HCTR 쉘터</a></li>
+            <li><a href="">MSAP 쉘터</a></li>
+            <li><a href="">위성 쉘터</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="">3</a></li>
@@ -101,46 +111,48 @@
             <h3 class="page-header">온도 및 습도</h3>
             <div class="row placeholders">
               <div class="col-xs-2 col-sm-30 placeholder">
-                <div 
-                  style = "
-                  width : 100px;
-                  height : 100px;
-                  border-radius : 50px;
-                  background-color : #41ff41;
-                  margin:0px 40px;
-                  padding : 35px 0px;
-
-                  font-size : 25px;
-                  color : white;">
-                  21ºC </div>
-                <h4>온도</h4>
+              {%for i in all.ondo%}
+                <i class="{{i.ondo_color}}" style = "color :{{i.color}}"></i>
+                <h4>온도 : {{i.ondo}}ºC</h4>
+                <span class="text-muted"> 정보통신센터 </span>
               </div>
-
+              {%endfor%}
+              {%for i in all.HM%}
               <div class="col-xs-2 col-sm-30 placeholder">
-                <div 
-                  style = "
-                  width : 100px;
-                  height : 100px;
-                  border-radius : 50px;
-                  background-color : #41ff41;
-                  margin:0px 40px;
-                  padding : 35px 0px;
-
-                  font-size : 25px;
-                  color : white;">
-                  18% </div>
-                <h4>습도</h4>
+                <i class="{{i.HM_color}}" style = "color : {{i.color}};"></i>
+                <h4>습도 : {{i.HM}}%</h4>
+                <span class="text-muted"> 정보통신센터 </span>
+              </div>
+              {%endfor%}
+			{%for i in all.Fire %}
+              <div class="col-xs-6 col-sm-2 placeholder">
+                <span class="fa-stack fa-7x" style = "width : 150px; height : 98px;">
+                  <i class="fa fa-building fa-stack-1x" style = "color : {{i.color}};"></i> 
+                  <i class="fa fa-fire-alt fa-stack-1x text-danger " style = "{{i.display}};"></i> 
+                </span>
+                <h4>화재확인</h4>
+             	<span class="text-muted"> 정보통신센터 </span>
+              </div>
+			{%endfor%}
               </div>
           </div>
-          </div>
+
+
+
+        
+
+
+
+          
           <div class="col-sm-9 col-sm-offset-3 col-md-12 col-md-offset-0 main">
             <h3 class="page-header"> </h3>
 
             <div class="row placeholders">
 			{%for i in all.Door %}
               <div class="col-xs-6 col-sm-2 placeholder">
-                <i class="fa fa-smile fa-7x" style = "color : #41ff41;"></i>
-                <h4>문</h4>
+                <i class="{{i.alert}}" style = "{{i.color}}"></i>
+                <h4>출입문</h4>
+                <span class="text-muted"> 정보통신센터</span>
               </div>
 			{%endfor%}
               </div>
@@ -148,8 +160,9 @@
             <div class="row placeholders">
 			{%for i in all.window %}
               <div class="col-xs-6 col-sm-2 placeholder">
-                <i class="fa fa-smile fa-7x" style = "color : #41ff41;"></i>
+                <i class="{{i.alert}}" style = "{{i.color}}"></i>
                 <h4>창문</h4>
+                <span class="text-muted"> 정보통신센터</span>
               </div>
 			{%endfor%}
               </div>
@@ -157,8 +170,9 @@
             <div class="row placeholders">
 			{%for i in all.lack %}
               <div class="col-xs-6 col-sm-2 placeholder">
-                <i class="fa fa-smile fa-7x" style = "color : #41ff41;"></i>
+                <i class="{{i.alert}}" style = "{{i.color}}"></i>
                 <h4>랙장비</h4>
+             	<span class="text-muted"> 정보통신센터 </span>
               </div>
 			{%endfor%}
               </div>
@@ -166,21 +180,16 @@
             <div class="row placeholders">
 			{%for i in all.password %}
               <div class="col-xs-6 col-sm-2 placeholder">
-                <i class="fa fa-smile fa-7x" style = "color : #41ff41;"></i>
+                <span class="fa-stack fa-7x" style = "width : 120px; height : 98px;">
+                  <i class="{{i.alert}}" style = "color : {{i.color}};"></i> 
+                  <i class="fa fa-ban fa-stack-1x text-danger " style = "{{i.display}};"></i> 
+                </span>
                 <h4>암호장비</h4>
+             	  <span class="text-muted"> 정보통신센터 </span>
               </div>
 			{%endfor%}
               </div>
-			<h3 class="page-header"> </h3>
-            <div class="row placeholders">
-			{%for i in all.Fire %}
-              <div class="col-xs-6 col-sm-2 placeholder">
-                <i class="fa fa-smile fa-7x" style = "color : #41ff41;"></i>
-                <h4>화재확인</h4>
-              </div>
-			{%endfor%}
-              </div>
-			<h3 class="page-header"> </h3>
+			<h3 class="page-header"></h3>
             <div class="row placeholders">
 			{%for i in all.invade %}
               <div class="col-xs-6 col-sm-2 placeholder">
@@ -201,4 +210,3 @@
 
 </body>
 </html>
-
